@@ -53,8 +53,8 @@ export default class App extends React.Component{
     
    
   render(){
-    console.log("this",this.state.contryList)
-    let {capital} = this.state
+    console.log("this",this.state.capital)  
+    let {capital} = this.state 
     return(
       <View style={styles.view}>
         <View style={styles.viewborder}>
@@ -91,10 +91,10 @@ export default class App extends React.Component{
           {
       !isEmpty(capital)  &&
        <View style={{height:150,width:"95%",marginVertical:3,paddingHorizontal:5,marginHorizontal:10,borderRadius:5,elevation:1,backgroundColor:"#fff"}}>
-        <Text style={styles.testCapital}>temperature:<Text style={{color:"#000066"}}>capital.request.current.temperature</Text></Text>
-        <Text style={styles.testCapital}>weather_icons:<Text style={{color:"#000066"}}>weather_icons</Text></Text>
-        <Text style={styles.testCapital}>wind_speed:<Text style={{color:"#000066"}}>wind_speed</Text></Text>
-        <Text style={styles.testCapital}>precip:<Text style={{color:"#000066"}}>precip</Text></Text>
+        <Text style={styles.testCapital}>temperature:<Text style={{color:"#000066"}}>{capital.current.temperature}</Text></Text>
+        {/* <Text style={styles.testCapital}>weather_icons:<Text style={{color:"#000066"}}>weather_icons</Text></Text> */}
+        <Text style={styles.testCapital}>wind_speed:<Text style={{color:"#000066"}}>{capital.current.wind_speed}</Text></Text>
+        <Text style={styles.testCapital}>precip:<Text style={{color:"#000066"}}>{capital.current.precip}</Text></Text>
       </View>}
 
  
