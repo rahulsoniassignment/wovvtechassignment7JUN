@@ -41,12 +41,12 @@ export default class App extends React.Component{
     console.log("this.stTE",this.state.contry)
     this.setState({loading:true})
     Axios.get(`https://restcountries.eu/rest/v2/name/${this.state.contry}`).
-    then(res=>this.setState({contryList:res.data,loading:false}))
+    then(res=>this.setState({contryList:res.data,loading:false,capital:{}}))
     .catch(err=>this.setState({loading:false}))
   }
 
   onWeather=(item)=>{ 
-    this.setState({loading:true,contryList:[]})
+    this.setState({loading:true,contryList:[]})  
     Axios.get(`http://api.weatherstack.com/current?access_key=07dcef97d35ea4a3b3c75ed9a1d77aa2&query=${item.capital}`)
     .then(res=>this.setState({loading:false,capital:res.data})).catch(err=>this.setState({loading:false}))
   }
